@@ -1,6 +1,6 @@
 # Basic Structure of a C Program
 
-As we saw with the ‚ÄúHello World‚Äù example, a C program needs a main which acts as the entry point for the program. What that means is that when you execute the program, `main()` is called and whatever is in `main()` is executed. `main()` can contain calls to other functions. This also means that if you have a function which is not called directly or indirectly from `main()`, it will never be used.
+As we saw with the ìHello Worldî example, a C program needs a main which acts as the entry point for the program. What that means is that when you execute the program, `main()` is called and whatever is in `main()` is executed. `main()` can contain calls to other functions. This also means that if you have a function which is not called directly or indirectly from `main()`, it will never be used.
 
 So, let us go through a more involved example to understand the structure of a C program.
 
@@ -12,7 +12,7 @@ int main(void){
    int a = 10;
    int square_of_a = square(a);
 
-   printf(‚ÄúThe square of %d is %d‚Äù, a, square_of_a);
+   printf(ìThe square of %d is %dî, a, square_of_a);
    return 0;
 }
 
@@ -21,15 +21,15 @@ int square (int x){
 }
 ```
 
-We start with a program to calculate the square of a number. You should always start reading a program from `main()` function and then follow the functions that are being called. Here we start with the curly brackets/parenthesis. 
+We start with a program to calculate the square of a number. You should always start reading a program from `main()` function and then follow the functions that are being called. Here we start with the curly brackets/braces. 
 
-The parenthesis in C depicts a block. The starting/left parenthesis starts a new block and the right parenthesis closes the block. The blocks are **well-formed**. It means that two blocks cannot overlap each other. One block can be nested into another block. It is because of this structure, **C is a structured language**.  Each block can hold one or more statements. A statement can be a function call or an assignment. A function call means that you are calling a function which has been defined somewhere else. Assignment means that we are assigning the result of the right hand side **(r-value)** of an assignment operator **=** to the left hand site **(l-value)**. The left hand side must be a variable. The right hand side can be a function call, a variable, a constant literal or an expression. 
+The braces in C depicts a block. The starting/left braces starts a new block and the right braces closes the block. The blocks are **well-formed**. It means that two blocks cannot overlap each other. One block can be nested into another block. It is because of this structure, **C is a structured language**.  Each block can hold one or more statements. A statement can be a function call or an assignment. A function call means that you are calling a function which has been defined somewhere else. Assignment means that we are assigning the result of the right hand side **(r-value)** of an assignment operator **=** to the left hand site **(l-value)**. The left hand side must be a variable. The right hand side can be a function call, a variable, a constant literal or an expression. 
 
 1. **Variable** is an object which can hold a type. 
 2. **Constant literal** is an object which holds a value e.g. 1(int), 10L (long int), 5.6 (double), 5.6f (float), 0x10 (hexadecimal int), 06 (octal). 
 3. **Expression**is combination of operands and operator e.g. 10 + 20
 
-After the parenthesis, there is the declaration of `a`.
+After the left brace, there is the declaration of `a`.
 
 **Declaration** is introducing a new variable and setting its type. In the above example we have declared a new variable `a` and set its type to `int`. 
 

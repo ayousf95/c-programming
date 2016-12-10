@@ -1,6 +1,6 @@
 # C Programming
 
-Welcome to C Programming Course. It course is specifially for MCA Students studying in IUST . The course material pertains to the "Advanced C/C++ Programming" course taught in 1st Semister.
+Welcome to C Programming Course. This course is specifially for MCA Students studying in **Islamic University Of Science & Technology, Awantipora, Jammu & Kashmir** . The course material pertains to the "Advanced C/C++ Programming" course taught in 1st Semister.
 
 Here are the lectures :-
 
