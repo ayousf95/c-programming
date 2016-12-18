@@ -8,7 +8,7 @@
 int main(void){
   int day;
 
-  puts("Enter a day (1-7, 1-Monday, 7-Sunday)? ");
+  puts("Enter a day (1-7, 1-Monday -  7-Sunday)? ");
   scanf("%d", &day);
 
   switch(day){

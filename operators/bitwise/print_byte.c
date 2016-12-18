@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 void print_byte (unsigned char x, unsigned char mask){
   if((x & mask) == 0){
     printf("0");
@@ -9,7 +8,7 @@ void print_byte (unsigned char x, unsigned char mask){
 }
 
 int main(void){
-  unsigned char x = 0xc8;
+  unsigned char x;
   int val;
 
   printf("Enter a byte ? ");
