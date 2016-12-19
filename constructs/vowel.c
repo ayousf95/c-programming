@@ -27,6 +27,6 @@ int main(void){
     is_vowel = false;
   }
 
-  printf("It is a %s\n", is_vowel? "vowel" : "consonent");
+  printf("It is a %s\n", is_vowel? "vowel" : "consonant");
   return 0;
 }

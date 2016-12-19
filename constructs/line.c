@@ -19,7 +19,7 @@ int main(void){
 }
 
 void draw_line(int length){
-  int i;
+  int i = 0;
 
   while(i < length){
     putc('*', stdout);
