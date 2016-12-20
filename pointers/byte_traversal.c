@@ -4,14 +4,16 @@
 //
 #include <stdio.h>
 
-int main(void){
-  int  num = 0x12345678;
-  char *pbyte;
+typedef unsigned char byte;
 
-  pbyte  = (char*)&num;
+int main(void){
+  int  num = 0xff675474;
+  byte *pbyte;
+
+  pbyte  = (byte*)&num;
   printf("%-10s|%-20s|%-10s\n", "Byte", "Address", "Value");
   for(int i = 0; i < sizeof(int); i++){
-    char *current = pbyte + i;
+    byte *current = pbyte + i;
     printf("%-10d|%-20p|%-10x\n", i, current, *current);
   }
 
