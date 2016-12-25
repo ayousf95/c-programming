@@ -5,28 +5,30 @@
 //
 #include <stdio.h>
 
-void inc_wrong(const int *px){
-  int y = 20;
-  //!*px = *px + 1;
-  printf("const int*: I can only read from int const pointer! %d\n", *px);
-  px = &y;
-  printf("const int*: We can also point it to something else. %d\n", *px);
-}
-
-void inc(int* const px){
-  int y = 20;
-  *px = *px + 1;
-  printf("int* const: I can read as well as write to the pointer but can't point it "
-	 " to something else! : %d\n", *px);
-  //! px = &y;
-}
-
+//
+// Type            pointee/variable pointer
+// const int *cip   NO               YES
+// int* const ipc   YES              NO
+//
+// int x = 10;
+// int y = 20;
+// cip = &x;
+// ipc = &x;
+//
+// *cip = 40 !ERROR
+// *cip = &y;
+// *ipc = 40;
+// *ipc = &y; !ERROR
 int main(void){
-  int x;
-  
-  x = 10;
-  inc_wrong(&x);
-  inc(&x);
+  int x = 10;
+  int y = 20;
+  const int *cip = &x;
+  int* const ipc = &x;
+
+  *cip = 100; //!ERROR
+  cip = &y;
+  *ipc = 100;
+  ipc = &y;   //!ERROR
 
   return 0;
 }
