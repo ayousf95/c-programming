@@ -1,3 +1,9 @@
+//
+// mean.c
+//
+// A program to show how to use realloc
+// to reallocate memory
+//
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,7 +17,7 @@ int get_count(){
 }
 
 int* allocate_memory(int *values, int count){
-  return !values ? calloc(count, sizeof(int)): realloc(values, count * sizeof(int));
+  return !values ? malloc(count * sizeof(int)): realloc(values, count * sizeof(int));
 }
 
 void get_values(int *values, int count){
@@ -51,5 +57,6 @@ int main(void){
     printf("Mean is = %lf\n", calculate_mean(values, count));
   }while( should_repeat() );
 
+  free(values);
   return 0;
 }
