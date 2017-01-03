@@ -40,18 +40,17 @@ double calculate_mean(int *values, int count){
 
 int should_repeat(){
   char c;
-  printf("Do you want to do calculate mean again (Y|N) ? ");
+  printf("Do you want to calculate mean again (Y|N) ? ");
   scanf("\n%c", &c);
   return c == 'Y' || c == 'y';
 }
     
 int main(void){
-  int count;
   int *values = NULL;
   
   do {
     int count = get_count();
-    int *values = allocate_memory(values, count);
+    values = allocate_memory(values, count);
     get_values(values, count);
 
     printf("Mean is = %lf\n", calculate_mean(values, count));
