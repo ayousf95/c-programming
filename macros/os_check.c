@@ -6,9 +6,9 @@
 #include <stdio.h>
 
 int main(void){
-#ifdef __linux
-  puts("I am running on linux");
+#ifdef WIN32
+  puts("I am running on Windows");
 #else
-  puts("I am not on linux");
+  puts("I am not on Windows");
 #endif
 }
