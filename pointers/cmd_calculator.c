@@ -65,11 +65,29 @@ OPERATOR get_operator(int argc, char *argv[]){
   }else {
     return add;
   }
-} 
-      
+}
+
+void skip_args(int *argc, char **argv[], int count){
+  *argc -= count;
+  *argv += count;
+}
+
+void initialize_operation(Operation *op,
+			  OPERATOR operator,
+			  int argc,
+			  char *argv []){ 
+  op->operator  = operator;
+  op->size      = argc;
+  op->arguments = malloc(op->size * sizeof(double));
+  for(int i = 0; i < argc; i++){
+    op->arguments[i] = atof(argv[i]);
+  }
+}
+
 char* parse_arguments(Operation *op, int argc, char *argv[]){
   OPERATOR operator = add;
-
+  skip_args(&argc, &argv, 1);
+    
   if(argc < 1){
     return "Too few arguments";
   }
@@ -84,18 +102,11 @@ char* parse_arguments(Operation *op, int argc, char *argv[]){
       if(!operator){
 	return "Unknown operator";
       }
-      argc -= 2;
-      argv += 2;
+      skip_args(&argc, &argv, 2);
     }
   }
-    
-  op->operator  = operator;
-  op->size      = argc;
-  op->arguments = malloc(op->size * sizeof(double));
-  for(int i = 0; i < argc; i++){
-    op->arguments[i] = atof(argv[i]);
-  }
 
+  initialize_operation(op, operator, argc, argv);
   return NULL;
 }
 
@@ -109,7 +120,7 @@ void print_usage(char *program_name, char *message){
 
 int main(int argc, char* argv[]){
   Operation op;
-  char *error_message = parse_arguments(&op, argc-1, argv+1);
+  char *error_message = parse_arguments(&op, argc, argv);
 
   if(error_message){
     print_usage(argv[0], error_message);
@@ -120,3 +131,4 @@ int main(int argc, char* argv[]){
   printf("%lf\n", calculate(&op));
   return 0;
 }
+
